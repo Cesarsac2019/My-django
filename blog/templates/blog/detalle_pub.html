@@ -1,0 +1,11 @@
+{% extends 'blog/base.html'%}
+{% bloc content%}
+              <div  class="post">
+                <div class="date">
+                <p> publicado: {{ p.fecha_publicacion }} </p>
+                </div>
+              <h1>  <a href = "{ % url 'listar_pub' pk=p.pk %}" >{{ p.titulo }}</a></h1 >
+        <p>{{ p.texto|linebreaksbr }} </p>
+      </div>
+      
+{%endblock%}

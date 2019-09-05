@@ -1,9 +1,12 @@
-<html>
-    <head>
-        <title>Ola's blog</title>
-    </head>
-    <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
-    </body>
-</html>
+{% extends 'blog/base.html'%}
+{% block contentv%}
+        {% for p in pubs %}
+              <div  class="post">
+                <div class="date">
+                <p> publicado: {{ p.fecha_publicacion }} </p>
+              </div>
+              <h1>  <a href = "{ % url 'detalle_pub' pk=p.pk %}" >{{ p.titulo }}</a></h1 >
+               <p>{{ p.texto|linebreaksbr }} </p>
+      </div>
+      {%endfor%}
+{%endblock%}
